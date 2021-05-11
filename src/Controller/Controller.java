@@ -13,6 +13,10 @@ public class Controller {
         this.view = v;
     }
 
+    public void pullTheLever() throws InterruptedException {
+        model.runEquations();
+    }
+
     public void runTest() throws InterruptedException {
         int i = 10;
         int loopCount = 0;

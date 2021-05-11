@@ -14,6 +14,8 @@ public class Main {
 
         //controller.runTest();
 
+        controller.pullTheLever();
+
         System.out.println("All done!");
 
 

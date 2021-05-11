@@ -59,8 +59,6 @@ public class CellPanel extends JPanel {
         //Dimers
         g.setColor(dimerColor);
         g.fillOval(225, 500, this.dimerDimensions[0], this.dimerDimensions[1]);
-
-        System.out.println(this.getX()+" "+this.getY());
     }
 
     public void setMrnaDimensions(int[] dims){
