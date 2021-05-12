@@ -12,6 +12,7 @@ public class TysonEquations implements Equations {
     private final double kd = 1;
     private final double Jp = 0.05;
     private final double kp2 = 0.03;
+    private double keq = 200.0;
     private final double r = 2.0;
 
 
@@ -33,12 +34,12 @@ public class TysonEquations implements Equations {
 
     public double calculate_q(double Pt){
         //For use via the third equation
-        double keq = 200.0;
-        return 2/(1+Math.sqrt(1+8* keq *Pt));
+        return 2.0/(1.0+Math.sqrt(1.0+8.0*keq*Pt));
     }
 
     public double dMdt(double M, double Pt, double q){
         return (vm/(1.0+(Math.pow(Pt*(1.0-q)/(2.0*Pcrit),2.0))) - km*M);
+        //return vm/(1.0+(Math.pow(Pt*(1.0-q)/(2.0*Pcrit), 2.0)))-km*M;
     }
 
     public double dPtdt(double M, double Pt, double q){
@@ -51,6 +52,14 @@ public class TysonEquations implements Equations {
 
     public double calculateP2(double Pt, double q){ ;
         return (0.5*(1.0-q)*Pt);
+    }
+
+    public void setKeq(double k){
+        this.keq += k;
+    }
+
+    public double getKeq(){
+        return this.keq;
     }
 
 }

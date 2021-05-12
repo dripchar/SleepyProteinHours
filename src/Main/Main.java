@@ -13,7 +13,8 @@ public class Main {
         Controller controller = new Controller(model, view);
 
         //controller.runTest();
-
+        view.setLightDownListener(model.getEquations());
+        view.setLightUpListener(model.getEquations());
         controller.pullTheLever();
 
         System.out.println("All done!");

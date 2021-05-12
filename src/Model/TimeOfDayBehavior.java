@@ -1,7 +1,9 @@
 package Model;
 
+import javax.swing.*;
+
 public interface TimeOfDayBehavior {
 
-    void updateView();
+    void updateView(int time, JPanel panel);
 
 }
