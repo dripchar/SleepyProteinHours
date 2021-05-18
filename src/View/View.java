@@ -16,6 +16,7 @@ public class View {
     private JPanel buttonPanel;
     private JButton lightUp;
     private JButton lightDown;
+    private JLabel Keq_label;
 
     public View(){
         buildGUI();
@@ -30,14 +31,15 @@ public class View {
         panel.setPreferredSize(new Dimension(1500,900));
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        Keq_label = new JLabel("200");
 
         lightUp = new JButton("Lights Up");
-
         lightDown = new JButton("Lights Down!");
+
 
         buttonPanel.add(lightUp);
         buttonPanel.add(lightDown);
-
+        buttonPanel.add(Keq_label);
 
         mainPanel.add(panel);
         mainPanel.add(buttonPanel);
@@ -66,6 +68,7 @@ public class View {
             @Override
             public void actionPerformed(ActionEvent e) {
                 tysonEquations.setKeq(-5.0);
+                Keq_label.setText(Integer.toString((int) tysonEquations.getKeq()));
             }
         });
     }
@@ -75,7 +78,7 @@ public class View {
             @Override
             public void actionPerformed(ActionEvent e) {
                 tysonEquations.setKeq(5.0);
-                System.out.println("Lights up! Keq: " + tysonEquations.getKeq());
+                Keq_label.setText(Integer.toString((int) tysonEquations.getKeq()));
             }
         });
     }
